@@ -24,7 +24,7 @@
         background-color: pink;
       }
       .size{
-        height: 300px;
+        height: 530px;
         outline: 2px solid red;
         background-color: rgb(201, 201, 201);
       }
@@ -105,13 +105,13 @@
       $("#resultados").html('<p class="mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias temporibus in dolorum quam corrupti rem blanditiis exercitationem quis voluptatibus laborum reiciendis minima praesentium aliquam, excepturi, rerum provident error tenetur? Sed.</p>');
     })
     $("#ch-tex").click(function(){
-      $("#resultados p").text("Cambiando el largo lorem por algo más corto.");
+      $("#resultados .mb-3").text("Cambiando el largo lorem por algo más corto.");
     })
     $("#ins-append").click(function(){
-      $("#resultados p").html('<p>Párrafo insertado con el método append, al final, dentro de la etiqueta; insertando una tag "p" html.</p>');
+      $("#resultados").append('<p>Párrafo insertado con el método append, al final, dentro de la etiqueta; insertando una tag "p" html.</p>');
     })
     $("#ins-prepend").click(function(){
-      $("#resultados p").html('<p>Párrafo insertado con el método prepend, al inicio, dentro de la etiqueta; insertando una tag "p" html.</p>');
+      $("#resultados").prepend('<p>Párrafo insertado con el método prepend, al inicio, dentro de la etiqueta; insertando una tag "p" html.</p>');
     })
 
     });
