@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js">
+    <link href= "https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <link href="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/tipped/dist/js/tipped.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/tipped/dist/css/tipped.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js">
+    <link href="https://momentjs.com/downloads/moment.js">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+      #divisor{
+        height: 600px;
+        width: 10px;
+      }
+      .bg-pink{
+        background-color: pink;
+      }
+      .size{
+        height: 300px;
+        outline: 2px solid red;
+        background-color: rgb(201, 201, 201);
+      }
+    </style>
+    <!-- MI CÓDIGO JQUERY VA ADENTRO DE LA FUNCIÓN DOCUMENT READY -->
+    <script>
+    $(document).ready( function () {
+    // Condiciones Iniciales .-
+    $("h3.bg-primary").hide();
+    $("h3.bg-success").hide();
+    $("img.bird").hide();
+    $("img.plant").hide();
+    $("img.bug").hide();
+    // Comandos JQuery Ejercicio 1 .-  ============================================
+    $("#mostrarEmp").click(function() {
+      $("h3.bg-primary").show();
+    });
+    $("#ocultarEmp").click(function() {
+      $("h3.bg-primary").hide();
+    });
+    $("#mostrarServ").click(function() {
+      $("h3.bg-success").show();
+    });
+    $("#ocultarServ").click(function() {
+      $("h3.bg-success").hide();
+    });
+    $("#toggle").click(function() {
+      $("h3.bg-primary , h3.bg-success").toggle();
+    });
+    // Comandos JQuery Ejercicio 2 .-  ==============================================
+        $("button.bird").click(function() {
+      $("img.cartas").remove();
+      $("img").fadeOut();
+      $("img.bird").slideDown();
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-pink");
+    });
+    $("button.plant").click(function() {
+      $("img.cartas").remove();
+      $("img").hide();
+      $("img.plant").fadeIn();
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-success");
+    });
+    $("button.bug").click(function() {
+      $("img.cartas").remove();
+      $("img").slideUp();
+      $("img.bug").fadeIn();
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-danger");
+    });
+    $("button.btn-outline-secondary").click(function() {
+      $("img.cartas").remove();
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-secondary");
+      $("img.bird , img.plant , img.bug").slideToggle();
+    });
+    $("img.btn.bird").click(function(){
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-pink");
+      $("img.cartas").remove();
+      $("h3.cartas").after(`<img src="imagenes/cartas-bird.png" class="cartas mt-3 img-responsive center-block d-block mx-auto" alt="cartas axie tipo ave">`);
+    })
+    $("img.btn.plant").click(function(){
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-success");
+      $("img.cartas").remove();
+      $("h6.cartas").before(`<img src="imagenes/cartas-plant.png" class="cartas mt-3 img-responsive center-block d-block mx-auto" alt="cartas axie tipo planta">`);
+    })
+    $("img.btn.bug").click(function(){
+      $("#divisor").removeClass ();
+      $("#divisor").addClass("bg-danger");
+      $("img.cartas").remove();
+      $("h6.cartas").before(`<img src="imagenes/cartas-bug.png" class="cartas mt-3 img-responsive center-block d-block mx-auto" alt="cartas axie tipo bug">`);
+    })
+    // Comandos JQuery Ejercicio 3 .-  ==============================================
+    $("#ins-html").click(function(){
+      $("#resultados").html('<p class="mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias temporibus in dolorum quam corrupti rem blanditiis exercitationem quis voluptatibus laborum reiciendis minima praesentium aliquam, excepturi, rerum provident error tenetur? Sed.</p>');
+    })
+    $("#ch-tex").click(function(){
+      $("#resultados p").text("Cambiando el largo lorem por algo más corto.");
+    })
+    $("#ins-append").click(function(){
+      $("#resultados p").html('<p>Párrafo insertado con el método append, al final, dentro de la etiqueta; insertando una tag "p" html.</p>');
+    })
+    $("#ins-prepend").click(function(){
+      $("#resultados p").html('<p>Párrafo insertado con el método prepend, al inicio, dentro de la etiqueta; insertando una tag "p" html.</p>');
+    })
+
+    });
+    </script>  
+    <title>PRACTICA JQUERY</title>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-2">PRÁCTICAS DE FUNCIONES JQuery</h1>
+    <h2 class="mb-2">1.- Ejercicio con: .click(); .hide(); .show(); y .toggle();</h2>
+    <div class="row">
+      <div class="col-7">
+        <h3 class="bg-primary mb-3">MOVISTAR, CLARO, ENTEL, WOM.</h3>
+        <h3 class="bg-success mb-5">telefonía, Internet, televisión.</h3>
+      </div>
+      <div class="col-2">
+        <div class="row">
+          <button id="mostrarEmp" class="btn btn-primary">MOSTRAR Empresas</button>
+          <button id="ocultarEmp" class="btn btn-danger mt-2">OCULTAR Empresas</button>
+        </div>
+        <div class="row mt-3">
+          <button id="mostrarServ" class="btn btn-warning">Mostrar Servicios</button>
+          <button id="ocultarServ" class="btn btn-info mt-2">Ocultar Servicios</button>
+        </div>
+        <div class="row mt-3"><button id="toggle" class="btn btn-danger">ToGglE item!</button>
+        </div>
+      </div>
+    </div>
+    <hr class="my-3"> <!-- ================================================================================= -->
+    <h2 class="mb-2">2.- Ejercicio con: .slideDown(); .slideUp(); .slideToggle(); .fadeIn(); .fadeOut(); .remove(); .after(); .before(); .addClass(); .removeClass();</h2>
+    <div class="row">
+      <div class="col-3">
+        <h3 class="bg-info text-center">AXIE</h3>
+        <button class="btn btn-warning bird btn-sm m-1">Bird</button>
+        <button class="btn btn-success plant btn-sm m-1">Plant</button>
+        <button class="btn btn-danger bug btn-sm m-1">Bug</button>
+        <button class="btn btn-outline-secondary btn-sm m-1">toggle</button>
+        <img src="imagenes/bird-Killer.png" class="bird btn m-3" alt="icono axie tipo ave">
+        <img src="imagenes/plant-Tank.png" class="plant btn m-3" alt="icono axie tipo planta">
+        <img src="imagenes/bugg-Suport.png" class="bug btn m-3" alt="icono axie tipo bicho">
+      </div>
+      <div id="divisor" class="col-1">
+      </div>
+      <div class="col-8">
+        <h3 class="cartas bg-info text-center">CARTAS DE HABILIDADES</h3>
+        <h6 class="cartas text-center">...</h6>
+      </div>
+    </div>
+    <hr class="my-3"> <!-- ================================================================================= -->
+    <h2 class="mb-3">3.- Ejercicio con: .append(); prepend(); .html(); .text();</h2>
+    <div class="row">
+      <div class="col-5">
+        <h3 class="bg-info text-center">Método a ejecutar:</h3>
+        <button id="ins-html" class="btn btn-warning btn-sm m-1">Insertar html ( .html() )</button><br>
+        <button id="ch-tex" class="btn btn-success btn-sm m-1">cambiar texto en html ( .text() )</button>
+        <button id="ins-append" class="btn btn-danger btn-sm m-1">añadir texto dentro de una etiqueta al final ( .append() )</button>
+        <button id="ins-prepend" class="btn btn-danger btn-sm m-1">añadir texto dentro de una etiqueta al principio ( .prepend() )</button>
+      </div>
+      <div class="col-7 size mb-5">
+        <h3 class="bg-info text-center">Resultado:</h3>
+        <div id="resultados">
+          <p>MARCA</p>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
